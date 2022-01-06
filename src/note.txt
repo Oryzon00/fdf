@@ -1,0 +1,24 @@
+1) Lire vec GNL
+
+char	*ret_gnl = gnl 
+while (ret_gnl )
+{
+	........
+	ret_gnl = gnl
+}
+
+2) Recuperer le ret_gnl
+mettre dans tableaux int a 2d
+--> int **tab
+"0 10 0 5"
+--> split " "
+[ [0] [10] [0] [5] ] --> mais ce sont des char*
+--> atoi
+int **tab [[ 0 10 0 5 ]] --> ce sont des ints
+en bouclant on rajoute les autres lignes/tableaux dans le grand tableau.
+enregistrer a l'aide de split la taille de mes lignes le nb de colonnes.
+int **tab = [	[0 10 0 5]
+				[100 0 0 6]
+				[.......]
+			]
+Attention x et y sont inverses

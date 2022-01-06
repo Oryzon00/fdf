@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:16:13 by ajung             #+#    #+#             */
-/*   Updated: 2021/11/25 16:49:59 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/06 19:52:22 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include "gnl/get_next_line.h"
 
 /*1ere partie*/
 int		ft_isalpha(int c);
@@ -74,4 +75,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/*get_next_line*/
+
+
 #endif
