@@ -1,4 +1,4 @@
-SRC = main.c	\
+SRC = src/main.c	\
 
 OBJ = $(SRC:.c=.o)
 
@@ -8,9 +8,11 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-NAME = output
+NAME = fdf
 
 PATH_MLX =./mlx
+
+PATH_LIBFT = ./libft
 
 LINUX    = -I /usr/include -L /usr/lib -L mlx_linux -I mlx_linux -lXext -l X11 -lm -lz
 
@@ -20,11 +22,14 @@ LINUX    = -I /usr/include -L /usr/lib -L mlx_linux -I mlx_linux -lXext -l X11 -
 all: $(NAME)
 
 $(NAME):	$(OBJ)
-			make -C $(PATH_MLX) all
-			$(CC) $(OBJ) mlx/libmlx_Linux.a $(LINUX) -o $(NAME)
+			make -C $(PATH_MLX) all --silent
+			make -C $(PATH_LIBFT) bonus --silent
+			$(CC) $(OBJ) mlx/libmlx_Linux.a libft/libft.a $(LINUX) -o $(NAME)
 
 clean:
-		rm -f $(OBJ) 
+		rm -f $(OBJ)
+		make -C $(PATH_LIBFT) fclean --silent
+		make -C $(PATH_MLX) clean --silent
 
 fclean:	clean
 		rm -f $(NAME)
