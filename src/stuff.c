@@ -1,7 +1,7 @@
 #include "fdf.h"
 
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_image_data *data, int x, int y, int color)
 {
     char    *dst;
 
@@ -9,7 +9,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
     *(unsigned int*)dst = color;
 }
 
-void    print_triangle(int x, t_data *img)
+void    print_triangle(int x, t_image_data *img)
 {
     int i;
 
@@ -24,7 +24,7 @@ void    print_triangle(int x, t_data *img)
 
 }
 
-void    print_square_texture(int x, t_data *img)
+void    print_square_texture(int x, t_image_data *img)
 {
     int i;
     int j;
@@ -43,7 +43,7 @@ void    print_square_texture(int x, t_data *img)
     }
 }
 
-void	print_pink_floyd(int x, t_data *img)
+void	print_pink_floyd(int x, t_image_data *img)
 {
 	double	i;
 	int		j;
@@ -85,7 +85,7 @@ void	print_pink_floyd(int x, t_data *img)
 	}
 }
 
-void	print_colors(int x, t_data *img)
+void	print_colors(int x, t_image_data *img)
 {
 	double	i;
 	double	ratio;
@@ -131,17 +131,17 @@ int	mouse_hook(int keycode, t_vars *vars)
 
 int	main(void)
 {
-	t_vars	vars;
-	t_data	img;
+	t_vars			vars;
+	t_image_data	img;
 	char	*str= "Allo\nJ'ecris\nsur\nplsuieurs\nlignes";
 
 	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "My window");
 
-	img.img = mlx_new_image(vars.mlx, 1920, 1080);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
+	img.img_ptr = mlx_new_image(vars.mlx, 1920, 1080);
+	img.addr = mlx_get_data_addr(img.img_ptr, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
-	mlx_put_image_to_window(vars.mlx, vars.win, img.img, 0, 0);
+	mlx_put_image_to_window(vars.mlx, vars.win, img.img_ptr, 0, 0);
 	
 	mlx_hook(vars.win, ON_DESTROY, 0, close, &vars);
 	mlx_key_hook(vars.win, key_hook, &vars);
@@ -152,4 +152,5 @@ int	main(void)
 
 	mlx_string_put(vars.mlx, vars.win, 200, 200, 0x00FFFFFF, str);
 	mlx_loop(vars.mlx);
+	
 }
