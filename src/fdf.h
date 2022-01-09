@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:00:16 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/08 00:12:10 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/09 20:52:41 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,11 @@ typedef struct	s_all
 int		read_map(char *argv, t_all *all);
 int		free_all(t_all *all);
 void	my_mlx_pixel_put(t_image_data *image_data, int x, int y, int color);
-int		close_window(t_vars *vars);
-int		key_hook(int keycode, t_vars *vars);
-int		mouse_hook(int keycode, t_vars *vars);
+int		close_window(t_all *all);
 int		create_window(t_all *all);
 int		hook_window(t_all *all);
+
+//A supprimer
+void	print_pink_floyd(int x, t_image_data *img);
 
 #endif

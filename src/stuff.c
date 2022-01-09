@@ -1,14 +1,5 @@
 #include "fdf.h"
 
-
-void	my_mlx_pixel_put(t_image_data *data, int x, int y, int color)
-{
-    char    *dst;
-
-    dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-    *(unsigned int*)dst = color;
-}
-
 void    print_triangle(int x, t_image_data *img)
 {
     int i;
@@ -104,53 +95,10 @@ void	print_colors(int x, t_image_data *img)
 	
 }
 
-int	close(t_vars *vars)
-{
-	mlx_destroy_window(vars->mlx, vars->win);
-	exit (0);
-}
+
 
 int	ouverture(t_vars *vars)
 {
 	printf("Bonjour\n");
-}
-int	key_hook(int keycode, t_vars *vars)
-{
-	if (keycode == 65307)
-		close(vars);
-	printf("keycode: %d\n", keycode);
 	return (0);
-}
-
-int	mouse_hook(int keycode, t_vars *vars)
-{
-	printf("keycode: %d\n", keycode);
-	return (0);
-}
-
-
-int	main(void)
-{
-	t_vars			vars;
-	t_image_data	img;
-	char	*str= "Allo\nJ'ecris\nsur\nplsuieurs\nlignes";
-
-	vars.mlx = mlx_init();
-	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "My window");
-
-	img.img_ptr = mlx_new_image(vars.mlx, 1920, 1080);
-	img.addr = mlx_get_data_addr(img.img_ptr, &img.bits_per_pixel, &img.line_length,
-								&img.endian);
-	mlx_put_image_to_window(vars.mlx, vars.win, img.img_ptr, 0, 0);
-	
-	mlx_hook(vars.win, ON_DESTROY, 0, close, &vars);
-	mlx_key_hook(vars.win, key_hook, &vars);
-	mlx_mouse_hook(vars.win, mouse_hook, &vars);
-	mlx_expose_hook(vars.win, ouverture, &vars);
-
-	print_pink_floyd(500, &img);
-
-	mlx_string_put(vars.mlx, vars.win, 200, 200, 0x00FFFFFF, str);
-	mlx_loop(vars.mlx);
-	
 }
