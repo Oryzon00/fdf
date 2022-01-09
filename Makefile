@@ -4,7 +4,9 @@ SRC =	src/main.c \
 		src/window.c \
 		src/utils.c \
 		src/hook.c \
-
+		src/stuff.c \
+	
+#supprimer stuff.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -14,7 +16,9 @@ RM = rm -f
 
 DEBUG = -g3
 
-#CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
+
+OPTI = -O3 -flto
 
 NAME = fdf
 
@@ -25,16 +29,19 @@ PATH_LIBFT = ./libft
 LINUX    = -I /usr/include -L /usr/lib -L mlx_linux -I mlx_linux -lXext -l X11 -lm -lz
 
 %.o: %.c
-		$(CC) -I /usr/include -Imlx_linux -O3 -c $< -o $@
+		$(CC) -I /usr/include -Imlx_linux $(DEBUG) -c $< -o $@
 #Ajouter CFLAGS
+#Ajouter OPTI
 
 all: $(NAME)
 
 $(NAME):	$(OBJ)
 			make -C $(PATH_MLX) all --silent
 			make -C $(PATH_LIBFT) bonus --silent
-			$(CC) $(OBJ) mlx/libmlx_Linux.a libft/libft.a $(LINUX) -o $(NAME)
+			$(CC) $(DEBUG) $(OBJ) mlx/libmlx_Linux.a libft/libft.a $(LINUX) -o $(NAME)
 #Ajouter CFLAGS
+#AJOUTER OPTI
+
 clean:
 		rm -f $(OBJ)
 		make -C $(PATH_LIBFT) fclean --silent
