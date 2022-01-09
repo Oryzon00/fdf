@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:13:39 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/09 20:49:38 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/09 22:51:57 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,24 @@ int main(int ac, char **av)
 {
 	t_all all;
 
+	if (ac != 2)
+		return (0);
 	read_map(av[1], &all);
 	create_window(&all);
 	hook_window(&all);
-	//print_pink_floyd(500, &all.image_data);
+	print_pink_floyd(500, &all.image_data);
 	mlx_loop(all.vars.mlx);
 	return (0);
 }
 
-//x et y sont inverses dans mon pars.
+
+//bresenham ??
+
+//transformer 2d en 3d
+// /coorx = x - y;
+//coory = (x + y) / 2;
+
+//x et y sont inverses dans mon parsing.
 
 
 

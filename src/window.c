@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 23:21:20 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/09 20:15:34 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/09 22:42:09 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	create_window(t_all *all)
 	char	*str= "Bonjour, allo, test";
 	
 	all->vars.mlx = mlx_init();
+	if (!all->vars.mlx)
+		exit (0);
 	all->vars.win = mlx_new_window(all->vars.mlx, 1920, 1080, "My window");
 	all->image_data.img_ptr = mlx_new_image(all->vars.mlx, 1920, 1080);
 	all->image_data.addr = mlx_get_data_addr(all->image_data.img_ptr,

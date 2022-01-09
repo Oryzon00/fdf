@@ -94,11 +94,3 @@ void	print_colors(int x, t_image_data *img)
 	}
 	
 }
-
-
-
-int	ouverture(t_vars *vars)
-{
-	printf("Bonjour\n");
-	return (0);
-}
