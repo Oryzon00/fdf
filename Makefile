@@ -29,7 +29,7 @@ PATH_LIBFT = ./libft
 LINUX    = -I /usr/include -L /usr/lib -L mlx_linux -I mlx_linux -lXext -l X11 -lm -lz
 
 %.o: %.c
-		$(CC) -I /usr/include -Imlx_linux $(DEBUG) -c $< -o $@
+		$(CC) -I /usr/include -Imlx_linux  -c $< -o $@
 #Ajouter CFLAGS
 #Ajouter OPTI
 
@@ -38,7 +38,7 @@ all: $(NAME)
 $(NAME):	$(OBJ)
 			make -C $(PATH_MLX) all --silent
 			make -C $(PATH_LIBFT) bonus --silent
-			$(CC) $(DEBUG) $(OBJ) mlx/libmlx_Linux.a libft/libft.a $(LINUX) -o $(NAME)
+			$(CC)  $(OBJ) mlx/libmlx_Linux.a libft/libft.a $(LINUX) -o $(NAME)
 #Ajouter CFLAGS
 #AJOUTER OPTI
 
