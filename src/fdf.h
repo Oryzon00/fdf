@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:00:16 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/09 20:52:41 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/10 21:22:05 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,34 @@ enum {
 	ON_DESTROY = 17
 };
 
+typedef	struct s_corner
+{
+	int	x_corner1;
+	int	y_corner1;
+	int	x_corner2;
+	int	y_corner2;
+	int	x_corner3;
+	int	y_corner3;
+	int	x_corner4;
+	int	y_corner4;
+}				t_corner;
+
+
+typedef struct	s_coor
+{
+	int			x_origin;
+	int			y_origin;
+	double		scale;
+	t_corner	corner;
+}				t_coor;
+
+
 typedef struct	s_all
 {
 	t_image_data	image_data;
 	t_vars			vars;
 	t_map_data		map_data;
+	t_coor			coor;
 	
 }				t_all;
 
