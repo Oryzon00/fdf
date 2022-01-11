@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:13:39 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/11 17:42:21 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/11 22:16:52 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,17 @@ int main(int ac, char **av)
 	read_map(av[1], &all);
 	create_window(&all);
 	hook_window(&all);
-	all.coor.scale = 1;
-	print_pink_floyd(500, &all);
+	print_map(&all);
 	mlx_loop(all.vars.mlx);
 	return (0);
 }
 
 
-//bresenham ??
+//relier chaque point avec son voisin du bas et du dessous si il existe
 
 //transformer 2d en 3d
-// /coorx = x - y;
-//coory = (x + y) / 2;
+// x2d = x + z
+// y2d = y - z
 
 //x et y sont inverses dans mon parsing.
 

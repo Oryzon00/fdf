@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:00:16 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/11 18:52:12 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/11 22:15:27 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,18 @@ typedef	struct s_corner
 	int	y_corner4;
 }				t_corner;
 
+typedef struct s_c2d
+{
+	int	x;
+	int	y;
+}				t_c2d;
+
+typedef struct s_c3d
+{
+	int	x;
+	int	y;
+	int	z;
+}				t_c3d;
 
 typedef struct	s_coor
 {
@@ -88,8 +100,10 @@ typedef struct	s_coor
 	int			y_origin;
 	double		scale;
 	t_corner	corner;
+	t_c2d		c2d;
+	t_c3d		c3d;
+	
 }				t_coor;
-
 
 typedef struct	s_all
 {
@@ -108,6 +122,19 @@ int		close_window(t_all *all);
 int		create_window(t_all *all);
 int		hook_window(t_all *all);
 void	print_line(t_all *all, int xA, int yA, int xB, int yB);
+void	switch2dto3d(t_all *all);
+int		init_origin(t_all *all);
+void	initcoor3d(t_all *all, int i, int j);
+int		is_map_inside_window(t_all *all, int x, int y);
+int 	get_scale(t_all *all);
+void	print_map(t_all *all);
+
+
+
+
+
+
+
 
 
 //A supprimer

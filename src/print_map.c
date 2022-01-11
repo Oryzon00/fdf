@@ -6,41 +6,31 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 20:58:38 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/11 17:26:34 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/11 22:38:17 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	init_coor(t_all *all)
+void	print_map(t_all *all)
 {
-	all->coor.x_origin = 1920 / 2;
-	all->coor.y_origin = 1080 / 10;
-	return (0);
-}
+	int	i;
+	int	j;
 
-int	get_scale(t_all *all, int x, int y)
-{
-	int	check;
-
-	check = 1;
-	all->coor.scale = 1;
-	while (check)
+	j = 0;
+	init_origin(all);
+	get_scale(all);
+	while (j < all->map_data.size_line)
 	{
-		if (((300 < x * all->coor.scale) && (x * all->coor.scale < 1920)) &&
-			((0 < y * all->coor.scale) && (y * all->coor.scale < 1080)))
-			check = 0;
-		else
-			all->coor.scale -= (all->coor.scale / 100);
+		i = 0;
+		while(i < all->map_data.nb_line)
+		{
+			initcoor3d(all, i, j);
+			switch2dto3d(all);
+			my_mlx_pixel_put(all, all->coor.scale * all->coor.c2d.x,
+				all->coor.scale * all->coor.c2d.y, 0x00ff3030);
+			i++;
+		}
+		j++;
 	}
-	return (0);
-}
-
-int find_corners(t_all *all)
-{
-	all->coor.corner.x_corner1 = all->coor.x_origin;
-	all->coor.corner.y_corner1 = all->coor.y_origin;
-	all->coor.corner.x_corner2 = all ->coor.x_origin + 50 * all->map_data.size_line;
-	all->coor.corner.y_corner2 = all->coor.y_origin;
-	get_scale(all, all->coor.x_origin, all->coor.y_origin);
 }

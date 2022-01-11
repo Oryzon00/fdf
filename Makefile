@@ -5,6 +5,7 @@ SRC =	src/main.c \
 		src/utils.c \
 		src/hook.c \
 		src/stuff.c \
+		src/print_map.c \
 	
 #supprimer stuff.c
 
@@ -29,7 +30,7 @@ PATH_LIBFT = ./libft
 LINUX    = -I /usr/include -L /usr/lib -L mlx_linux -I mlx_linux -lXext -l X11 -lm -lz
 
 %.o: %.c
-		$(CC) -I /usr/include -Imlx_linux  -c $< -o $@
+		$(CC) $(DEBUG) -I /usr/include -Imlx_linux  -c $< -o $@
 #Ajouter CFLAGS
 #Ajouter OPTI
 
@@ -38,7 +39,7 @@ all: $(NAME)
 $(NAME):	$(OBJ)
 			make -C $(PATH_MLX) all --silent
 			make -C $(PATH_LIBFT) bonus --silent
-			$(CC)  $(OBJ) mlx/libmlx_Linux.a libft/libft.a $(LINUX) -o $(NAME)
+			$(CC) $(DEBUG) $(OBJ) mlx/libmlx_Linux.a libft/libft.a $(LINUX) -o $(NAME)
 #Ajouter CFLAGS
 #AJOUTER OPTI
 
