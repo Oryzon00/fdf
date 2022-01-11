@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:13:39 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/10 19:42:32 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/11 17:42:21 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int main(int ac, char **av)
 	read_map(av[1], &all);
 	create_window(&all);
 	hook_window(&all);
-	print_pink_floyd(500, &all.image_data);
+	all.coor.scale = 1;
+	print_pink_floyd(500, &all);
 	mlx_loop(all.vars.mlx);
 	return (0);
 }
