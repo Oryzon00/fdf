@@ -1,0 +1,58 @@
+Truc a faire:
+
+1) modifier print_line: 
+-4 args max et 
+-diviser en 3 fonctions
+
+2) comment appeller foncion get line dans print map?
+init origin en 2d et pas 3d?
+
+3)Ajouter 3 points cardinaux dans fonction scaling
+
+
+
+
+
+
+
+
+
+relier chaque point avec son voisin du bas et du dessous si il existe
+x et y sont inverses dans mon parsing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// int main(int ac, char **av)
+// {
+// 	t_all	all;
+// 	int		i;
+// 	int 	j;
+	
+// 	read_map(av[1], &all);
+// 	i = 0;
+// 	while(i < all.map_data.nb_line)
+// 	{
+// 		j = 0;
+// 		while (j < all.map_data.size_line)
+// 		{
+// 			printf("%d ", all.map_data.map[i][j]);
+// 			j++;
+// 		}
+// 		i++;
+// 		printf("\n");
+// 	}
+// 	return (0);
+// }
