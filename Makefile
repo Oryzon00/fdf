@@ -11,7 +11,7 @@ SRC =	src/main.c \
 
 OBJ = $(SRC:.c=.o)
 
-CC = gcc
+CC = clang
 
 RM = rm -f
 

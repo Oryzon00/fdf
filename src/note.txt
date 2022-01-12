@@ -1,5 +1,11 @@
 Truc a faire:
 
+
+boucle infinie quand je lance grande map ?
+--> le scale tend vers 0 mais ne l'atteint pas
+dans le cas  d'un negatif
+voir initcoor
+
 1) modifier print_line: 
 -4 args max et 
 -diviser en 3 fonctions
@@ -7,7 +13,19 @@ Truc a faire:
 2) comment appeller foncion get line dans print map?
 init origin en 2d et pas 3d?
 
-3)Ajouter 3 points cardinaux dans fonction scaling
+4)fonction pour me deplacer
+- hook fleche diretionnel
+- x++/x-- pour gauche droite
+- y++/y-- pour haut bas
+
+5) fonction pour augmenter hauteur
+-hook + -
+-z++/z--
+
+6) fonction zoom
+- hook molette souris
+
+7) changer couleur faire un gradiant. 
 
 
 

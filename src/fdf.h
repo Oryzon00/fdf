@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:00:16 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/11 22:15:27 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/12 20:00:09 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ enum {
 
 typedef	struct s_corner
 {
-	int	x_corner1;
-	int	y_corner1;
-	int	x_corner2;
-	int	y_corner2;
-	int	x_corner3;
-	int	y_corner3;
-	int	x_corner4;
-	int	y_corner4;
+	int	x_c1;
+	int	y_c1;
+	int	x_c2;
+	int	y_c2;
+	int	x_c3;
+	int	y_c3;
+	int	x_c4;
+	int	y_c4;
 }				t_corner;
 
 typedef struct s_c2d
@@ -122,9 +122,8 @@ int		close_window(t_all *all);
 int		create_window(t_all *all);
 int		hook_window(t_all *all);
 void	print_line(t_all *all, int xA, int yA, int xB, int yB);
-void	switch2dto3d(t_all *all);
 int		init_origin(t_all *all);
-void	initcoor3d(t_all *all, int i, int j);
+void	initcoor(t_all *all, int i, int j);
 int		is_map_inside_window(t_all *all, int x, int y);
 int 	get_scale(t_all *all);
 void	print_map(t_all *all);
