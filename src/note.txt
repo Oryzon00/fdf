@@ -3,16 +3,13 @@ Truc a faire:
 
 Si open ou read ne marche pas, quitter sans leaks/segfault
 
-1) modifier print_line: 
--diviser en 3 fonctions
-
-2) comment appeller foncion get line dans print map?
-init origin en 2d et pas 3d?
+1)tracer trait
 
 4)fonction pour me deplacer
 - hook fleche diretionnel
 - x++/x-- pour gauche droite
 - y++/y-- pour haut bas
+incrementer sur x et y de l'origine sans recalculer la scale
 
 5) fonction pour augmenter hauteur
 -hook + -
