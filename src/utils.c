@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 23:15:26 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/13 17:53:06 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/13 19:43:44 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ void	initcoor(t_all *all, int i, int j)
 	all->coor.c3d.x = 60 * i;
 	all->coor.c3d.y = 60 * j;
 	all->coor.c3d.z = all->map_data.map[j][i] * 5;
-	//c2d.x PEUT ETrE Negatif
 	all->coor.c2d.x =  all->coor.x_origin + all->coor.scale * (all->coor.c3d.x - all->coor.c3d.y) + 0.5;
-	//c2d.y PEUT ETRE Negatif
 	all->coor.c2d.y = all->coor.y_origin + all->coor.scale * ((all->coor.c3d.y + all->coor.c3d.x) / 2 - all->coor.c3d.z) + 0.5;
 }
 

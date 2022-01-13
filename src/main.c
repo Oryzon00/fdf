@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:13:39 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/13 18:03:09 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/13 20:45:07 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ int main(int ac, char **av)
 		return (0);
 	read_map(av[1], &all);
 	create_window(&all);
-	hook_window(&all);
-	print_map(&all);
 	init_origin(&all);
+	get_scale(&all);
+
+	print_map(&all);
+	hook_window(&all);
+	// init_origin(&all);
 	// all.coor.droite.xA = 201;
 	// all.coor.droite.yA = 0;
 	// all.coor.droite.xB = 201;

@@ -7,6 +7,7 @@ SRC =	src/main.c \
 		src/stuff.c \
 		src/print_map.c \
 		src/print_line.c \
+		src/hook_utils.c \
 	
 #supprimer stuff.c
 
