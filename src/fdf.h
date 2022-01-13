@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:00:16 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/12 20:00:09 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/13 15:47:58 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,17 +69,6 @@ enum {
 	ON_DESTROY = 17
 };
 
-typedef	struct s_corner
-{
-	int	x_c1;
-	int	y_c1;
-	int	x_c2;
-	int	y_c2;
-	int	x_c3;
-	int	y_c3;
-	int	x_c4;
-	int	y_c4;
-}				t_corner;
 
 typedef struct s_c2d
 {
@@ -94,15 +83,23 @@ typedef struct s_c3d
 	int	z;
 }				t_c3d;
 
+typedef	struct s_droite
+{
+	int	xA;
+	int	yA;
+	int	xB;
+	int	yB;
+}				t_droite;
+
+
 typedef struct	s_coor
 {
 	int			x_origin;
 	int			y_origin;
 	double		scale;
-	t_corner	corner;
 	t_c2d		c2d;
 	t_c3d		c3d;
-	
+	t_droite	droite;
 }				t_coor;
 
 typedef struct	s_all
@@ -121,7 +118,7 @@ void	my_mlx_pixel_put(t_all *all, int x, int y, int color);
 int		close_window(t_all *all);
 int		create_window(t_all *all);
 int		hook_window(t_all *all);
-void	print_line(t_all *all, int xA, int yA, int xB, int yB);
+void	print_line(t_all *all);
 int		init_origin(t_all *all);
 void	initcoor(t_all *all, int i, int j);
 int		is_map_inside_window(t_all *all, int x, int y);

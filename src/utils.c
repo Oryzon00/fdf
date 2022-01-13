@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 23:15:26 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/12 21:35:52 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/13 16:36:37 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,69 +30,71 @@ int	close_window(t_all *all)
 	free_all(all);
 	exit (0);
 }
-//4 arg max
-void	print_line(t_all *all, int xA, int yA, int xB, int yB)
+
+void	print_line(t_all *all)
 {
 	double	m;
 	int		b;
 
-	if (xA == xB)
+	if (all->coor.droite.xA == all->coor.droite.xB)
 	{
-		while (yA != yB)
+		while (all->coor.droite.yA != all->coor.droite.yB)
 		{
-			my_mlx_pixel_put(all, xA, yA, 0x00FFFFFF);
-			if (yA < yB)
-				yA++;
-			else if (yA > yB)
-				yA--;
+			my_mlx_pixel_put(all, all->coor.droite.xA, all->coor.droite.yA, 0x00FFFFFF);
+			if (all->coor.droite.yA < all->coor.droite.yB)
+				all->coor.droite.yA++;
+			else if (all->coor.droite.yA > all->coor.droite.yB)
+				all->coor.droite.yA--;
 		}
 	}
-	m = (yB - yA);
-	m /= (xB - xA);
-	if (-1 <= m <= 1)
+	m = (all->coor.droite.yB - all->coor.droite.yA);
+	m /= (all->coor.droite.xB - all->coor.droite.xA);
+
+	if ((-1 <= m) && (m <= 1))
 	{
-		while (xA != xB)
+		while (all->coor.droite.xA != all->coor.droite.xB)
 		{
-			my_mlx_pixel_put(all, xA, (xA * m), 0x00FFFFFF);
-			if (xA < xB)
-				xA++;
-			else if (xA > xB)
-				xA--;
+			my_mlx_pixel_put(all, all->coor.droite.xA, (all->coor.droite.xA * m), 0x00FFFFFF);
+			if (all->coor.droite.xA < all->coor.droite.xB)
+				all->coor.droite.xA++;
+			else if (all->coor.droite.xA > all->coor.droite.xB)
+				all->coor.droite.xA--;
 		}
 	}
+	
 	else
 	{
-		while (yA != yB)
+		while (all->coor.droite.yA != all->coor.droite.yB)
 		{
-			my_mlx_pixel_put(all, (yA / m), yA, 0x00FFFFFF);
-			if (yA < yB)
-				yA++;
-			else if (yA > yB)
-				yA--;
+			my_mlx_pixel_put(all, (all->coor.droite.yA / m), all->coor.droite.yA, 0x00FFFFFF);
+			if (all->coor.droite.yA < all->coor.droite.yB)
+				all->coor.droite.yA++;
+			else if (all->coor.droite.yA > all->coor.droite.yB)
+				all->coor.droite.yA--;
 		}
 	}
 }
 
 void	initcoor(t_all *all, int i, int j)
 {
-	all->coor.c3d.x = all->coor.x_origin + 50 * i;
-	all->coor.c3d.y = all->coor.y_origin + 50 * j;
-	all->coor.c3d.z = all->map_data.map[j][i] * 10;
+	all->coor.c3d.x = 60 * i;
+	all->coor.c3d.y = 60 * j;
+	all->coor.c3d.z = all->map_data.map[j][i] * 5;
 	//c2d.x PEUT ETrE Negatif
-	all->coor.c2d.x = all->coor.c3d.x - all->coor.c3d.y;
+	all->coor.c2d.x =  all->coor.x_origin + all->coor.scale * (all->coor.c3d.x - all->coor.c3d.y);
 	//c2d.y PEUT ETRE Negatif
-	all->coor.c2d.y = (all->coor.c3d.y + all->coor.c3d.x) / 2 - all->coor.c3d.z;
+	all->coor.c2d.y = all->coor.y_origin + all->coor.scale * ((all->coor.c3d.y + all->coor.c3d.x) / 2 - all->coor.c3d.z);
 }
 
 int	init_origin(t_all *all)
 {
-	all->coor.x_origin = 1920 / 2;
-	all->coor.y_origin = 1080 / 10;
+	all->coor.x_origin = 960;
+	all->coor.y_origin = 108;
 	return (0);
 }
 
 
-int	is_map_inside_window(t_all *all, int x, int y)
+int	is_map_inside_window(t_all *all, int i, int j)
 {
 	int	check;
 
@@ -100,8 +102,10 @@ int	is_map_inside_window(t_all *all, int x, int y)
 	
 	while (check)
 	{
-		if (((200 < x * all->coor.scale) && (x * all->coor.scale < 1720)) &&
-			((200 < y * all->coor.scale) && (y * all->coor.scale < 880)))
+		initcoor(all, i, j);
+		// if (((0 < x * all->coor.scale) && (x * all->coor.scale < 1920)) &&
+		// 	((0 < y * all->coor.scale) && (y * all->coor.scale < 1080)))
+		if ((all->coor.c2d.x < 1920) && (all->coor.c2d.y < 1080))
 			check = 0;
 		else
 			all->coor.scale -= (all->coor.scale / 100);
@@ -112,12 +116,12 @@ int	is_map_inside_window(t_all *all, int x, int y)
 int	get_scale(t_all *all)
 {
 	all->coor.scale = 1;
-	initcoor(all, 0, 0);
-	is_map_inside_window(all, all->coor.c2d.x, all->coor.c2d.y);
-	initcoor(all, all->map_data.size_line - 1, 0);
-	is_map_inside_window(all, all->coor.c2d.x, all->coor.c2d.y);
-	initcoor(all, 0, all->map_data.nb_line - 1);
-	is_map_inside_window(all, all->coor.c2d.x, all->coor.c2d.y);
-	initcoor(all, all->map_data.size_line - 1, all->map_data.nb_line - 1);
-	is_map_inside_window(all, all->coor.c2d.x, all->coor.c2d.y);
+	//initcoor(all, 0, 0);
+	is_map_inside_window(all, 0, 0);
+	//initcoor(all, all->map_data.size_line - 1, 0);
+	is_map_inside_window(all, all->map_data.size_line - 1, 0);
+	//initcoor(all, 0, all->map_data.nb_line - 1);
+	is_map_inside_window(all, 0, all->map_data.nb_line - 1);
+	//initcoor(all, all->map_data.size_line - 1, all->map_data.nb_line - 1);
+	is_map_inside_window(all, all->map_data.size_line - 1, all->map_data.nb_line - 1);
 }
