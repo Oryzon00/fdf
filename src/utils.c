@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 23:15:26 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/13 16:40:41 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/13 17:53:06 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,49 +30,7 @@ int	close_window(t_all *all)
 	exit (0);
 }
 
-void	print_line(t_all *all)
-{
-	double	m;
-	int		b;
 
-	if (all->coor.droite.xA == all->coor.droite.xB)
-	{
-		while (all->coor.droite.yA != all->coor.droite.yB)
-		{
-			my_mlx_pixel_put(all, all->coor.droite.xA, all->coor.droite.yA, 0x00FFFFFF);
-			if (all->coor.droite.yA < all->coor.droite.yB)
-				all->coor.droite.yA++;
-			else if (all->coor.droite.yA > all->coor.droite.yB)
-				all->coor.droite.yA--;
-		}
-	}
-	m = (all->coor.droite.yB - all->coor.droite.yA);
-	m /= (all->coor.droite.xB - all->coor.droite.xA);
-
-	if ((-1 <= m) && (m <= 1))
-	{
-		while (all->coor.droite.xA != all->coor.droite.xB)
-		{
-			my_mlx_pixel_put(all, all->coor.droite.xA, (all->coor.droite.xA * m), 0x00FFFFFF);
-			if (all->coor.droite.xA < all->coor.droite.xB)
-				all->coor.droite.xA++;
-			else if (all->coor.droite.xA > all->coor.droite.xB)
-				all->coor.droite.xA--;
-		}
-	}
-	
-	else
-	{
-		while (all->coor.droite.yA != all->coor.droite.yB)
-		{
-			my_mlx_pixel_put(all, (all->coor.droite.yA / m), all->coor.droite.yA, 0x00FFFFFF);
-			if (all->coor.droite.yA < all->coor.droite.yB)
-				all->coor.droite.yA++;
-			else if (all->coor.droite.yA > all->coor.droite.yB)
-				all->coor.droite.yA--;
-		}
-	}
-}
 
 void	initcoor(t_all *all, int i, int j)
 {
@@ -80,9 +38,9 @@ void	initcoor(t_all *all, int i, int j)
 	all->coor.c3d.y = 60 * j;
 	all->coor.c3d.z = all->map_data.map[j][i] * 5;
 	//c2d.x PEUT ETrE Negatif
-	all->coor.c2d.x =  all->coor.x_origin + all->coor.scale * (all->coor.c3d.x - all->coor.c3d.y);
+	all->coor.c2d.x =  all->coor.x_origin + all->coor.scale * (all->coor.c3d.x - all->coor.c3d.y) + 0.5;
 	//c2d.y PEUT ETRE Negatif
-	all->coor.c2d.y = all->coor.y_origin + all->coor.scale * ((all->coor.c3d.y + all->coor.c3d.x) / 2 - all->coor.c3d.z);
+	all->coor.c2d.y = all->coor.y_origin + all->coor.scale * ((all->coor.c3d.y + all->coor.c3d.x) / 2 - all->coor.c3d.z) + 0.5;
 }
 
 int	init_origin(t_all *all)
