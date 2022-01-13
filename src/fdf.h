@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:00:16 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/13 15:47:58 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/13 20:41:26 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,13 @@ void	initcoor(t_all *all, int i, int j);
 int		is_map_inside_window(t_all *all, int x, int y);
 int 	get_scale(t_all *all);
 void	print_map(t_all *all);
+void	go_down(t_all *all);
+void	go_up(t_all *all);
+void	go_left(t_all *all);
+void	go_right(t_all *all);
+void	reload_image(t_all *all);
+
+
 
 
 

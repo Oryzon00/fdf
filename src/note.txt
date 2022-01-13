@@ -6,10 +6,7 @@ Si open ou read ne marche pas, quitter sans leaks/segfault
 1)tracer trait
 
 4)fonction pour me deplacer
-- hook fleche diretionnel
-- x++/x-- pour gauche droite
-- y++/y-- pour haut bas
-incrementer sur x et y de l'origine sans recalculer la scale
+faire que ca bouge quand je reste appuyer
 
 5) fonction pour augmenter hauteur
 -hook + -
