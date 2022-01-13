@@ -1,13 +1,9 @@
 Truc a faire:
 
 
-boucle infinie quand je lance grande map ?
---> le scale tend vers 0 mais ne l'atteint pas
-dans le cas  d'un negatif
-voir initcoor
+Si open ou read ne marche pas, quitter sans leaks/segfault
 
 1) modifier print_line: 
--4 args max et 
 -diviser en 3 fonctions
 
 2) comment appeller foncion get line dans print map?

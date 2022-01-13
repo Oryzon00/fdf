@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 23:15:26 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/13 16:36:37 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/13 16:40:41 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	my_mlx_pixel_put(t_all *all, int x, int y, int color)
 {
     char    *dst;
 
-    if (((0 < x * all->coor.scale) && (x * all->coor.scale < 1920)) &&
-			((0 < y * all->coor.scale) && (y * all->coor.scale < 1080)))
+    if (((0 < x) && (x < 1920)) && ((0 < y) && (y < 1080)))
 	{
 		dst = all->image_data.addr + (y * all->image_data.line_length +
 			x * (all->image_data.bits_per_pixel / 8));
