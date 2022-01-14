@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 00:04:30 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 18:43:32 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 21:02:04 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	key_hook(int keycode, t_all *all)
 		increase_z(all);
 	else if (keycode == 65453)
 		decrease_z(all);
+	else if (65430 <= keycode && keycode <= 65437)
+		change_color(keycode, all);
 	printf("keycode: %d\n", keycode);
 	return (0);
 }
