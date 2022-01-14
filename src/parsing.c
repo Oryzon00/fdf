@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 19:45:45 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 17:08:45 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 17:39:49 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ int	*get_line(char *ret_gnl, t_all *all)
 	
 	i = 0;
 	ret_split = ft_split(ret_gnl, ' ');
-	dprintf(1, "split\n");
+	//dprintf(1, "split\n");
 	while(ret_split[i])
 		i++;
 	all->map_data.size_line = i;
-	line = (int*)malloc(sizeof(int) * i);
+	line = malloc(sizeof(int) * i);
 	if (!line)
 		return (NULL);
 	i = 0;
 	while (i < all->map_data.size_line)
 	{
 		line[i] = ft_atoi(ret_split[i]);
-		dprintf(1, "atoi\n");
+		//dprintf(1, "atoi\n");
 		i++;
 	}
 	free_split(ret_split);
@@ -77,11 +77,11 @@ int	read_map(char *arg, t_all *all)
 	int		fd;
 	
 	fd = open(arg, O_RDONLY);
-	dprintf(1, "open1\n");
+	//dprintf(1, "open1\n");
 	all->map_data.nb_line = find_nb_line(fd);
 	close(fd);
 	fd = open(arg, O_RDONLY);
-	dprintf(1, "open2\n");
+	//dprintf(1, "open2\n");
 	ret_gnl = get_next_line(fd);
 	i = 0;
 	map = malloc(sizeof(int*) * all->map_data.nb_line);
@@ -91,7 +91,7 @@ int	read_map(char *arg, t_all *all)
 		free(ret_gnl);
 		i++;
 		ret_gnl = get_next_line(fd);
-		dprintf(1, "gnl\n");
+		//dprintf(1, "gnl\n");
 	}
 	free(ret_gnl);
 	all->map_data.map = map;

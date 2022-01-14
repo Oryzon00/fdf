@@ -8,6 +8,8 @@ SRC =	src/main.c \
 		src/print_map.c \
 		src/print_line.c \
 		src/hook_utils.c \
+		src/hook_utils2.c \
+		src/get_scale.c \
 	
 #supprimer stuff.c
 

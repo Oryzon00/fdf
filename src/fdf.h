@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:00:16 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 16:42:54 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 18:43:25 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ typedef struct	s_coor
 {
 	int			x_origin;
 	int			y_origin;
+	int			z_pixel;
 	double		scale;
 	t_c2d		c2d;
 	t_c3d		c3d;
@@ -107,9 +108,7 @@ typedef struct	s_all
 	t_image_data	image_data;
 	t_vars			vars;
 	t_map_data		map_data;
-	t_coor			coor;
-	// mettre en pointeur
-	
+	t_coor			coor;	
 }				t_all;
 
 
@@ -122,7 +121,6 @@ int		hook_window(t_all *all);
 void	print_line(t_all *all);
 int		init_origin(t_all *all);
 void	initcoor(t_all *all, int i, int j);
-int		is_map_inside_window(t_all *all, int x, int y);
 int 	get_scale(t_all *all);
 void	print_map(t_all *all);
 void	go_down(t_all *all);
@@ -130,13 +128,10 @@ void	go_up(t_all *all);
 void	go_left(t_all *all);
 void	go_right(t_all *all);
 void	reload_image(t_all *all);
-
-
-
-
-
-
-
+void	increase_z(t_all *all);
+void	decrease_z(t_all *all);
+void	increase_scale(t_all *all);
+void	decrease_scale(t_all *all);
 
 
 
