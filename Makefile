@@ -4,14 +4,12 @@ SRC =	src/main.c \
 		src/window.c \
 		src/utils.c \
 		src/hook.c \
-		src/stuff.c \
 		src/print_map.c \
 		src/print_line.c \
 		src/hook_utils.c \
 		src/hook_utils2.c \
 		src/get_scale.c \
-	
-#supprimer stuff.c
+		src/color.c \
 
 OBJ = $(SRC:.c=.o)
 

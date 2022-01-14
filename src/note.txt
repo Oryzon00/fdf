@@ -5,13 +5,18 @@ Si open ou read ne marche pas, quitter sans leaks/segfault
 
 - mars s'affiche mal
 
+-segfault sur changement scale
 
-6) fonction zoom
-segfault sur changement scale
+-changer couleur
 
-7) changer couleur faire un gradiant. 
+-faire un gradiant. 
 
 
+
+
+
+
+main pour imprimer map
 
 // int main(int ac, char **av)
 // {
