@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 00:04:30 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 15:12:13 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 18:43:32 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,20 @@ int	key_hook(int keycode, t_all *all)
 		go_left(all);
 	else if (keycode == 65362)
 		go_up(all);
-	//printf("keycode: %d\n", keycode);
+	else if (keycode == 65451)
+		increase_z(all);
+	else if (keycode == 65453)
+		decrease_z(all);
+	printf("keycode: %d\n", keycode);
 	return (0);
 }
 
 int	mouse_hook(int keycode, t_all *all)
 {
+	if (keycode == 4)
+		increase_scale(all);
+	else if (keycode == 5)
+		decrease_scale(all);
 	printf("keycode: %d\n", keycode);
 	return (0);
 }

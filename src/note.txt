@@ -3,42 +3,13 @@ Truc a faire:
 
 Si open ou read ne marche pas, quitter sans leaks/segfault
 
-1)ajouter b dans print_line
+- mars s'affiche mal
 
-4)
-
-5) fonction pour augmenter hauteur
--hook + -
--z++/z--
 
 6) fonction zoom
-- hook molette souris
+segfault sur changement scale
 
 7) changer couleur faire un gradiant. 
-
-
-
-
-
-
-
-
-
-relier chaque point avec son voisin du bas et du dessous si il existe
-x et y sont inverses dans mon parsing.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

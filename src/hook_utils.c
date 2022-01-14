@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 20:15:34 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 16:18:44 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 18:31:46 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	go_left(t_all *all)
 {
 	all->coor.x_origin -= 2;
 	reload_image(all);
-
 }
 
 void	go_up(t_all *all)
