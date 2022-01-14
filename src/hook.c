@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 00:04:30 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/13 20:25:43 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 15:12:13 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	key_hook(int keycode, t_all *all)
 {
 	if (keycode == 65307)
 		close_window(all);
-	else if(keycode == 65336)
+	else if(keycode == 65363)
 		go_right(all);
 	else if (keycode == 65364)
 		go_down(all);
@@ -37,7 +37,8 @@ int	mouse_hook(int keycode, t_all *all)
 int	hook_window(t_all *all)
 {
 	mlx_hook(all->vars.win, ON_DESTROY, 0, close_window, all);
-	mlx_key_hook(all->vars.win, key_hook, all);
+	mlx_hook(all->vars.win, ON_KEYDOWN, 1L << 0, key_hook, all);
+	//mlx_key_hook(all->vars.win, key_hook, all);
 	mlx_mouse_hook(all->vars.win, mouse_hook, all);
 	return (0);
 }

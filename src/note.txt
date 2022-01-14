@@ -3,10 +3,9 @@ Truc a faire:
 
 Si open ou read ne marche pas, quitter sans leaks/segfault
 
-1)tracer trait
+1)ajouter b dans print_line
 
-4)fonction pour me deplacer
-faire que ca bouge quand je reste appuyer
+4)
 
 5) fonction pour augmenter hauteur
 -hook + -
