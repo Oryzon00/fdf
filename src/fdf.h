@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:00:16 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 20:03:54 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 21:01:09 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ typedef struct s_mycolor
 	int	vert;
 	int blanc;
 	int	bleu;
-	int	jaune;
+	int	turquoize;
 	int	aff;
 }				t_mycolor;
 
@@ -144,5 +144,9 @@ void	decrease_z(t_all *all);
 void	increase_scale(t_all *all);
 void	decrease_scale(t_all *all);
 void	put_image_text(t_all *all);
+void	init_color(t_all *all);
+void	change_color(int keycode , t_all *all);
+
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:52:44 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 19:50:07 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 20:48:28 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	xegal(t_all *all)
 while (all->coor.droite.yA != all->coor.droite.yB)
 	{
 		my_mlx_pixel_put(all, all->coor.droite.xA, 
-			all->coor.droite.yA, 0x00FFFFFF);
+			all->coor.droite.yA, all->mycolor.aff);
 		if (all->coor.droite.yA < all->coor.droite.yB)
 			all->coor.droite.yA++;
 		else if (all->coor.droite.yA > all->coor.droite.yB)
@@ -30,7 +30,7 @@ void	mfaible(t_all *all, double m, int b)
 	while (all->coor.droite.xA != all->coor.droite.xB)
 	{
 		my_mlx_pixel_put(all, all->coor.droite.xA,
-			(all->coor.droite.xA * m + 0.5 + b), 0x00FFFFFF);
+			(all->coor.droite.xA * m + 0.5 + b), all->mycolor.aff);
 		if (all->coor.droite.xA < all->coor.droite.xB)
 			all->coor.droite.xA++;
 		else if (all->coor.droite.xA > all->coor.droite.xB)
@@ -43,7 +43,7 @@ void	mfort(t_all *all, double m, int b)
 	while (all->coor.droite.yA != all->coor.droite.yB)
 	{
 		my_mlx_pixel_put(all, ((all->coor.droite.yA - b) / m + 0.5), 
-			all->coor.droite.yA, 0x00FFFFFF);
+			all->coor.droite.yA, all->mycolor.aff);
 		if (all->coor.droite.yA < all->coor.droite.yB)
 			all->coor.droite.yA++;
 		else if (all->coor.droite.yA > all->coor.droite.yB)

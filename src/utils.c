@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 23:15:26 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 20:04:09 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 20:47:15 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ int	init_origin(t_all *all)
 	all->coor.y_origin = 108;
 	all->coor.z_pixel = 5;
 	get_scale(all);
+	init_color(all);
 	return (0);
 }

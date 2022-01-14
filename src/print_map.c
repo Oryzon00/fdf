@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 20:58:38 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 15:29:13 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 20:49:42 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_map(t_all *all)
 
 	j = 0;
 	initcoor(all, 0, 0);
-	my_mlx_pixel_put(all, all->coor.c2d.x, all->coor.c2d.y, 0x00FFFFFF);
+	my_mlx_pixel_put(all, all->coor.c2d.x, all->coor.c2d.y, all->mycolor.aff);
 	while (j < all->map_data.nb_line)
 	{
 		i = 0;
