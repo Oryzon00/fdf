@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 19:45:45 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 17:39:49 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 19:15:31 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ int	read_map(char *arg, t_all *all)
 	int		fd;
 	
 	fd = open(arg, O_RDONLY);
+	if (fd < 0)
+		exit (0);
 	//dprintf(1, "open1\n");
 	all->map_data.nb_line = find_nb_line(fd);
 	close(fd);

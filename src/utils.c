@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 23:15:26 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 18:13:28 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 20:04:09 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	close_window(t_all *all)
 	exit (0);
 }
 
-
-
 void	initcoor(t_all *all, int i, int j)
 {
 	all->coor.c3d.x = 60 * i;
@@ -46,5 +44,6 @@ int	init_origin(t_all *all)
 	all->coor.x_origin = 960;
 	all->coor.y_origin = 108;
 	all->coor.z_pixel = 5;
+	get_scale(all);
 	return (0);
 }

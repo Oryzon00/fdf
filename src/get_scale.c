@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 18:03:09 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 18:03:28 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 20:31:00 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,16 @@ int	get_scale(t_all *all)
 	all->coor.scale = 1;
 	//initcoor(all, 0, 0);
 	is_map_inside_window(all, 0, 0);
+	printf("%f\n", all->coor.scale);
 	//initcoor(all, all->map_data.size_line - 1, 0);
 	is_map_inside_window(all, all->map_data.size_line - 1, 0);
+	printf("%f\n", all->coor.scale);
+
 	//initcoor(all, 0, all->map_data.nb_line - 1);
 	is_map_inside_window(all, 0, all->map_data.nb_line - 1);
+	printf("%f\n", all->coor.scale);
 	//initcoor(all, all->map_data.size_line - 1, all->map_data.nb_line - 1);
 	is_map_inside_window(all, all->map_data.size_line - 1, all->map_data.nb_line - 1);
+	printf("%f\n", all->coor.scale);
+
 }

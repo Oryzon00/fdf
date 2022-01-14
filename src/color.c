@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 17:13:39 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/14 20:31:33 by ajung            ###   ########.fr       */
+/*   Created: 2022/01/14 20:06:54 by ajung             #+#    #+#             */
+/*   Updated: 2022/01/14 20:07:29 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int main(int ac, char **av)
+void	init_color(t_all *all)
 {
-	t_all all;
-	if (ac != 2)
-		return (0);
-	create_window(&all);
-	read_map(av[1], &all);
-	init_origin(&all);
-	print_map(&all);
-	put_image_text(&all);
-	hook_window(&all);
-	mlx_loop(all.vars.mlx);
-	return (0);
+	
 }
