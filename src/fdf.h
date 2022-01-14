@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:00:16 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/13 20:41:26 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 16:42:54 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ typedef struct	s_all
 	t_vars			vars;
 	t_map_data		map_data;
 	t_coor			coor;
+	// mettre en pointeur
 	
 }				t_all;
 

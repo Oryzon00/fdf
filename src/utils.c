@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 23:15:26 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/13 19:43:44 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/14 16:30:38 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,9 @@ int	is_map_inside_window(t_all *all, int i, int j)
 		// 	((0 < y * all->coor.scale) && (y * all->coor.scale < 1080)))
 		if ((all->coor.c2d.x < 1920) && (all->coor.c2d.y < 1080))
 			check = 0;
-		else
-			all->coor.scale -= (all->coor.scale / 100);
+		else if (all->coor.scale > 0.01)
+			//all->coor.scale -= (all->coor.scale / 100);
+			all->coor.scale -= 0.01;
 	}
 	return (0);
 }
