@@ -3,13 +3,13 @@ Truc a faire:
 
 Si open ou read ne marche pas, quitter sans leaks/segfault
 
-- mars s'affiche mal
-
--segfault sur changement scale
-
--changer couleur
+- mars s'affiche mal --> scale = 0 ??
+Trait infini qui font laguer la map??
 
 -faire un gradiant. 
+
+
+- rotation??
 
 
 
