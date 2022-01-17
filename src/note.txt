@@ -1,10 +1,6 @@
 Truc a faire:
 
-
-Si open ou read ne marche pas, quitter sans leaks/segfault
-
-- mars s'affiche mal --> scale = 0 ??
-Trait infini qui font laguer la map??
+split cr2e un emplacement de plus quand je finis par un charset
 
 -faire un gradiant. 
 
