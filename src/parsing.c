@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 19:45:45 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/17 18:09:06 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/17 21:37:10 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	*get_line(char	*ret_gnl, t_all	*all)
 	while (ret_split[i])
 		i++;
 	all->map_data.size_line = i;
+	dprintf(1, "i = %d\n", i);
 	line = malloc(sizeof(int) * i);
 	if (!line)
 		return (NULL);
