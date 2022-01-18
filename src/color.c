@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 20:06:54 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/17 18:39:34 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/18 18:58:04 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	init_color(t_all *all)
 	all->mycolor.turquoize = 0x0050FFFF;
 	all->mycolor.rouge = 0x00FF5050;
 	all->mycolor.vert = 0x0050FF50;
+	all->mycolor.maxime = 0xB60AB9;
 	all->mycolor.aff = all->mycolor.turquoize;
 }
 
@@ -34,5 +35,7 @@ void	change_color(int keycode, t_all *all)
 		all->mycolor.aff = all->mycolor.rouge;
 	else if (keycode == 65437)
 		all->mycolor.aff = all->mycolor.vert;
+	else if (keycode == 65429)
+		all->mycolor.aff = all->mycolor.maxime;
 	reload_image(all);
 }
