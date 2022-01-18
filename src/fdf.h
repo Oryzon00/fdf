@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:00:16 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/17 19:41:13 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/18 18:56:20 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ typedef struct s_mycolor
 	int	blanc;
 	int	bleu;
 	int	turquoize;
+	int	maxime;
 	int	aff;
 }				t_mycolor;
 
