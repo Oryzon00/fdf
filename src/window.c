@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 23:21:20 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/17 18:29:41 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/19 19:58:40 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,23 @@ int	create_window(t_all *all)
 void	put_image_text(t_all *all)
 {
 	char	*str;
+	char	*str2;
+	char	*str3;
+	char	*str4;
+	char	*str5;
 
 	mlx_put_image_to_window(all->vars.mlx, all->vars.win,
 		all->image_data.img_ptr, 0, 0);
-	str = "Bonjour, allo, test";
-	mlx_string_put(all->vars.mlx, all->vars.win, 200, 200, 0x00FFFFFF, str);
+	str = "DEPLACER MAP : FLECHES";
+	str2 = "MODIFIER Z : + / -";
+	str3 = "CHANGER COULEUR: 1 - 6";
+	str4 = "ROTATION: A - D";
+	str5 = "CHANGE VIEW : ENTER";
+	mlx_string_put(all->vars.mlx, all->vars.win, 50, 50, 0x00FFFFFF, str);
+	mlx_string_put(all->vars.mlx, all->vars.win, 50, 100, 0x00FFFFFF, str2);
+	mlx_string_put(all->vars.mlx, all->vars.win, 50, 150, 0x00FFFFFF, str3);
+	mlx_string_put(all->vars.mlx, all->vars.win, 50, 200, 0x00FFFFFF, str4);
+	mlx_string_put(all->vars.mlx, all->vars.win, 50, 250, 0x00FFFFFF, str5);
 }
 
 void	reload_image(t_all *all)

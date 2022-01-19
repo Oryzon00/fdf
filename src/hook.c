@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 00:04:30 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/19 19:09:29 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/19 19:57:44 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ int	key_hook(int keycode, t_all *all)
 		change_color(keycode, all);
 	else
 		key_hook2(keycode, all);
-	printf("keycode = %d\n", keycode);
 	return (0);
 }
 
 int	mouse_hook(int keycode, int x, int y, t_all *all)
 {
+	(void) x;
+	(void) y;
 	if (keycode == 4)
 		increase_scale(all);
 	else if (keycode == 5)

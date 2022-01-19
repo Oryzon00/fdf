@@ -11,7 +11,7 @@ SRC =	src/main.c \
 		src/hook_utils3.c \
 		src/get_scale.c \
 		src/color.c \
-		src/coor.c \
+		src/coor.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -36,18 +36,16 @@ LINUX    = -I /usr/include -L /usr/lib -L mlx_linux -I mlx_linux -lXext -l X11 -
 MLX = ./mlx/libmlx.a
 
 %.o: %.c
-		$(CC) -g3 $(DEBUG) -I /usr/include -Imlx_linux  -c $< -o $@
+		$(CC) -g3 $(CFLAGS) -I /usr/include -Imlx_linux  -c $< -o $@
 #Ajouter CFLAGS
 #Ajouter OPTI
 
 all: $(NAME)
 
-$(MLX):
-	make -C $(PATH_MLX) all --silent
-
-$(NAME):	$(OBJ) $(MLX)
+$(NAME):	$(OBJ)
+			make -C $(PATH_MLX) all --silent
 			make -C $(PATH_LIBFT) bonus --silent
-			$(CC)  $(DEBUG) $(OBJ) mlx/libmlx_Linux.a libft/libft.a $(LINUX) -o $(NAME)
+			$(CC)  $(CFLAGS) $(OBJ) mlx/libmlx_Linux.a libft/libft.a $(LINUX) -o $(NAME)
 #Ajouter CFLAGS
 #AJOUTER OPTI
 
