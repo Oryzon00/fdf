@@ -6,11 +6,21 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 00:04:30 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/18 20:21:48 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/19 19:09:29 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	key_hook2(int keycode, t_all *all)
+{
+	if (keycode == 97)
+		decrease_gamma(all);
+	else if (keycode == 100)
+		increase_gamma(all);
+	if (keycode == 65293)
+		change_view(all);
+}
 
 int	key_hook(int keycode, t_all *all)
 {
@@ -30,6 +40,9 @@ int	key_hook(int keycode, t_all *all)
 		decrease_z(all);
 	else if (65429 <= keycode && keycode <= 65437)
 		change_color(keycode, all);
+	else
+		key_hook2(keycode, all);
+	printf("keycode = %d\n", keycode);
 	return (0);
 }
 
