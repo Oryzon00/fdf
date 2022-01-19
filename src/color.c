@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 20:06:54 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/18 18:58:04 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/19 19:56:15 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	change_color(int keycode, t_all *all)
 		all->mycolor.aff = all->mycolor.rouge;
 	else if (keycode == 65437)
 		all->mycolor.aff = all->mycolor.vert;
-	else if (keycode == 65429)
+	else if (keycode == 65432)
 		all->mycolor.aff = all->mycolor.maxime;
 	reload_image(all);
 }
