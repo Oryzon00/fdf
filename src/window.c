@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 23:21:20 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/19 19:58:40 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/19 20:36:46 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	put_image_text(t_all *all)
 	mlx_string_put(all->vars.mlx, all->vars.win, 50, 150, 0x00FFFFFF, str3);
 	mlx_string_put(all->vars.mlx, all->vars.win, 50, 200, 0x00FFFFFF, str4);
 	mlx_string_put(all->vars.mlx, all->vars.win, 50, 250, 0x00FFFFFF, str5);
+	str5 = "ZOOM : MOLETTE SOURIS";
+	mlx_string_put(all->vars.mlx, all->vars.win, 50, 300, 0x00FFFFFF, str5);
 }
 
 void	reload_image(t_all *all)
