@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:00:16 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/18 18:56:20 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/19 19:20:58 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ typedef struct s_coor
 	int			y_origin;
 	int			z_pixel;
 	double		scale;
+	double		gamma;
+	int			iso;
 	t_c2d		c2d;
 	t_c3d		c3d;
 	t_droite	droite;
@@ -144,5 +146,8 @@ void	decrease_scale(t_all *all);
 void	put_image_text(t_all *all);
 void	init_color(t_all *all);
 void	change_color(int keycode, t_all *all);
+void	decrease_gamma(t_all *all);
+void	increase_gamma(t_all *all);
+void	change_view(t_all *all);
 
 #endif
