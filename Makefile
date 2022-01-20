@@ -21,7 +21,7 @@ RM = rm -f
 
 DEBUG = -g3
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 OPTI = -O3 -flto
 
@@ -36,7 +36,7 @@ LINUX    = -I /usr/include -L /usr/lib -L mlx_linux -I mlx_linux -lXext -l X11 -
 MLX = ./mlx/libmlx.a
 
 %.o: %.c
-		$(CC) -g3 $(CFLAGS) -I /usr/include -Imlx_linux  -c $< -o $@
+		$(CC) $(CFLAGS) -I /usr/include -Imlx_linux  -c $< -o $@
 #Ajouter CFLAGS
 #Ajouter OPTI
 
