@@ -6,7 +6,7 @@
 /*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 19:45:45 by ajung             #+#    #+#             */
-/*   Updated: 2022/01/18 15:57:29 by ajung            ###   ########.fr       */
+/*   Updated: 2022/01/20 13:48:38 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int	find_nb_line(int fd)
 		ret_gnl = get_next_line(fd);
 	}
 	free(ret_gnl);
+	if (i == 0)
+		exit(0);
 	return (i);
 }
 
