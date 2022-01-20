@@ -37,8 +37,6 @@ MLX = ./mlx/libmlx.a
 
 %.o: %.c
 		$(CC) $(CFLAGS) -I /usr/include -Imlx_linux  -c $< -o $@
-#Ajouter CFLAGS
-#Ajouter OPTI
 
 all: $(NAME)
 
@@ -46,8 +44,6 @@ $(NAME):	$(OBJ)
 			make -C $(PATH_MLX) all --silent
 			make -C $(PATH_LIBFT) bonus --silent
 			$(CC)  $(CFLAGS) $(OBJ) mlx/libmlx_Linux.a libft/libft.a $(LINUX) -o $(NAME)
-#Ajouter CFLAGS
-#AJOUTER OPTI
 
 clean:
 		rm -f $(OBJ)
